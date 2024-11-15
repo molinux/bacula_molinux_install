@@ -73,12 +73,13 @@ ORANGE="\033[38;5;208m"
 BLUE="\e[34m"
 BOLDBLUE="\e[1m${BLUE}"
 EC="\e[0m"
-}
 
+DIRCONF=/opt/bacula/etc/bacula-dir.conf
 # shellcheck source=bacula_molinux_install.conf
 source $PWD/bacula_molinux_install.conf
-
 export OS=$(grep -E "^ID=" < /etc/os-release | sed 's/.*=//g' | tr -d \")
+}
+
 
 #===============================================================================
 # Install Python tools
@@ -86,6 +87,14 @@ function python_deps()
 {
    apt install python3-pip -y
    pip install maskpass
+}
+
+
+#===============================================================================
+# Database credentials for Baculais API
+database_credentials()
+{
+    grep db $DIRCONF | tr ';' '\n'
 }
 
 #===============================================================================
@@ -505,7 +514,11 @@ function menu()
                 read_bacularis_key
                 install_bacularis
                 ;;
-            6) echo
+            6) # Database credentials
+                database_credentials
+                read -p "Press [enter] key to continue..." readenterkey
+                ;;
+            7) echo
                 banner
                 exit
                 ;;

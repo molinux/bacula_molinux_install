@@ -134,32 +134,67 @@ Or you can specify during the installation
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1. Create you account at [bacula.org](https://www.bacula.org/bacula-binary-package-download/) and [bacularis.app](https://users.bacularis.com/user/login/)
-2. Clone the repo
+2. Download the configuration file
 
-   ```sh
-   git clone https://github.com/molinux/bacula_molinux_install.git
-   ```
+```sh
+wget https://abre.ai/bacula-molinux-install-conf
+```
 
-3. Install NPM packages
+3. Download the installation file
 
-   ```sh
-   npm install
-   ```
+```sh
+wget https://abre.ai/bacula-molinux-install-app
+```
 
-4. Enter your API in `config.js`
+4. Enter your credentials in `bacula_molinux_install.conf` file:
 
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+```bash
+bacula_key="69549348539sdvsd2623"
+bacularis_user="sdfgh98ysdfgsdfg"
+bacularis_pass="sdlfgsdfg-WEWERTBsdfsdfg"
+```
+
+Or you can specify during the installation
+
+```bash
+--------------------------------------------------
+ Inform your Bacula Key
+ This key is obtained with a registration in Bacula.org.
+ https://www.bacula.org/bacula-binary-package-download/
+ Please, fill with your Bacula Key: 
+```
+
+5. Make the `bacula_molinux_install-app` executable
+
+```bash
+chmod +x bacula_molinux_install-app
+```
+
+6. And here we go !
+
+```bash
+./bacula_molinux_install-app
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+After install you can use bconsole to connect to Bacula Director (server)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```bash
+bconsole
+
+Connecting to Director localhost:9101
+1000 OK: 10002 bacula-dir Version: 15.0.2 (21 March 2024)
+Enter a period to cancel a command.
+*
+```
+
+And/or configure Bacularis from your browser
+
+[![Bacularis API Screen Shot][bacularis-api-screenshot]](https://example.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -241,6 +276,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: assets/bcmi-001.png
+[bacularis-api-screenshot]: assets/bcmi-002.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
