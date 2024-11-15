@@ -45,16 +45,16 @@ Bacula Community Molinux Install is approved in the following distributions and 
   <p align="center">
     Bacula Community Molinux Install
     <br />
-    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-es.md"><strong>Español »</strong></a>
-    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-pt_BR.md"><strong>Portugês »</strong></a>
-    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-en.md"><strong>English »</strong></a>
+    <a href="https://github.com/molinux/bacula_molinux_install/blob/dev/README-es.md"><strong>Español »</strong></a>
+    <a href="https://github.com/molinux/bacula_molinux_install/blob/dev/README-pt_BR.md"><strong>Português »</strong></a>
+    <a href="https://github.com/molinux/bacula_molinux_install/blob/dev/README-en.md"><strong>English</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <!-- <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a> -->
+    <!-- · -->
+    <a href="https://github.com/molinux/bacula_molinux_install/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/molinux/bacula_molinux_install/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -223,7 +223,7 @@ Use this space to list resources you find helpful and would like to give credit 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+https://www.markdownguide.org/basic-syntax/#reference-style-links
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
