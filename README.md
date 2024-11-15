@@ -248,7 +248,6 @@ Project Link: [Bacula Community Molinux Install](https://github.com/molinux/bacu
 <table>
  <tr>
         <td><a href="https://www.bacula.lat"><img src="./assets/Logo-Bacula-Brasil.jpg"></a></td>
-        <!-- <td>|</td>  -->
         <td><a href="https://www.nomaland.com.br"><img src="./assets/Logo-Nomaland-2.png"></a></td>
  <tr>
 </table>
