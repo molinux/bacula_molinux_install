@@ -1,11 +1,11 @@
 **Bacula Community Molinux Install** is approved in the following distributions and versions:
 
-| Distro       | Version                       |
-| :---         | :---                          |
-| Debian       | 11 (bullseye)                 | 
-| Oracle Linux | 9.3                           |
-| Ubuntu       | 22.04.4 LTS (Jammy Jellyfish) | 
-| Rocky        | Rocky Linux 9.3 (Blue Onyx)   |
+| Distro       | Version                        |
+|:-------------|:-------------------------------|
+| Debian       | 11 (bullseye)                  |
+| Oracle Linux | 9.3                            |
+| Alma Linux   | AlmaLinux 9.4 (Seafoam Ocelot) |
+| Rocky        | Rocky Linux 9.3 (Blue Onyx)    |
 
 <!-- Improved compatibility of volver al inicio link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
@@ -44,16 +44,14 @@
   <p align="center">
     Bacula Community Molinux Install
     <br />
-    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-pt_BR.md"><strong>Portugês »</strong></a>
-    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-es.md"><strong>Español »</strong></a>
-    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-en.md"><strong>English</strong></a>
+    <a href="https://github.com/molinux/bacula_molinux_install/blob/main/README-pt_BR.md"><strong>Portugês »</strong></a>
+    <a href="https://github.com/molinux/bacula_molinux_install/blob/main/README-es.md"><strong>Español »</strong></a>
+    <a href="https://github.com/molinux/bacula_molinux_install/blob/main/README-en.md"><strong>English</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/molinux/bacula_molinux_install/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/molinux/bacula_molinux_install/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
