@@ -481,7 +481,8 @@ function menu()
         echo "   3) Install Bacula Client only"
         echo "   4) Install Bacula Storage only (Only PostgreSQL)"
         echo "   5) Install Bacularis (Web Interface)"
-        echo "   6) Exit"
+        echo "   6) Database credentials (for Bacularis API)"
+        echo "   7) Exit"
         read -p " Select an option [1-6]: " option
         echo
         case $option in
