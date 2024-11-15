@@ -1,4 +1,4 @@
-Bacula Community Molinux Install is approved in the following distributions and versions:
+**Bacula Community Molinux Install** is approved in the following distributions and versions:
 
 | Distro       | Version                       |
 | :---         | :---                          |
@@ -201,20 +201,21 @@ And/or configure Bacularis from your browser
 <!-- ROADMAP -->
 ## Roadmap
 
-* [x] Add Changelog
-* [x] Add back to top links
-* [ ] Add Additional Templates w/ Examples
-* [ ] Add "components" document to easily copy & paste sections of the readme
+* [x] README in English
+* [ ] README in Brazilian Portuguese
+* [ ] README in Spanish
+* [ ] Bacula container version
+* [ ] Bacularis container version
 * [ ] Multi-language Support
-  * [ ] Chinese
+  * [ ] Brazilian Portuguese
   * [ ] Spanish
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/molinux/bacula_molinux_install/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
-## Contributing
+<!-- ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -227,9 +228,9 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-<!-- LICENSE -->
+LICENSE
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -239,14 +240,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Marcus Molinero - [linkedin](https://linkedin.com/in/marcus-molinero) - <email@example.com>
+Marcus Molinero - [linkedin](https://linkedin.com/in/marcus-molinero) - <marcus.molinero@bacula.com.br>
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [Bacula Community Molinux Install](https://github.com/molinux/bacula_molinux_install)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- ## Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
@@ -259,7 +260,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
