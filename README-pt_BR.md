@@ -7,7 +7,7 @@
 | Ubuntu       | 22.04.4 LTS (Jammy Jellyfish) | 
 | Rocky        | Rocky Linux 9.3 (Blue Onyx)   |
 
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<!-- Improved compatibility of voltar ao topo link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -84,31 +84,30 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre o Projeto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![BCMI Screen Shot][product-screenshot]](https://example.com)
 
-> Bacula Community Molinux Install (BCMI) is the ultimate tool that you need to install your Bacula Community server (and environment)
+> Bacula Community Molinux Install (BCMI) é a ferramenta definitiva para instalar seu servidor Bacula Community (e ambiente).
 
 ---
+Por que usar?
 
-Here's why:
+* Instalação automática com apenas alguns passos.
+* Possibilidade de instalar componentes isolados (storage e/ou cliente).
+* Instalação do Bacula e Bacularis centralizado.
+* Documentação disponível em Português, Inglês e Espanhol.
 
-* Automatic installation with just a few steps
-* Possibility of installing isolated components (storage and/or client)
-* Bacula and Bacularis installation in the same place
-* Documentation in Portuguese, English and Spanish
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Introdução
 
-### Prerequisites
+### Pré-requisitos
 
-To install Bacula Community and/or Bacularis through BCMI, you need to create your account at [bacula.org](https://www.bacula.org/bacula-binary-package-download/) and [bacularis.app](https://users.bacularis.com/user/login/) previously and get you key/account/password
+Para instalar o Bacula Community e/ou Bacularis usando o **BCMI**, você precisa criar uma conta em [bacula.org](https://www.bacula.org/bacula-binary-package-download/) and [bacularis.app](https://users.bacularis.com/user/login/) previamente e obter sua chave/conta/senha.
 
-After then, you put it on `bacula_molinux_install.conf` file as the example below
+Depois disso, insira essas informações no arquivo bacula_molinux_install.conf como no exemplo abaixo:
 
 ```bash
 bacula_key="69549348539sdvsd2623"
@@ -116,34 +115,35 @@ bacularis_user="sdfgh98ysdfgsdfg"
 bacularis_pass="sdlfgsdfg-WEWERTBsdfsdfg"
 ```
 
-Or you can specify during the installation
+Ou você pode especificar durante a instalação:
 
 ```bash
 --------------------------------------------------
- Inform your Bacula Key
- This key is obtained with a registration in Bacula.org.
+ Informe sua chave do Bacula
+ Esta chave é obtida com o registro no site Bacula.org.
  https://www.bacula.org/bacula-binary-package-download/
- Please, fill with your Bacula Key: 
+ Por favor, insira sua chave do Bacula:
 ```
 
-### Installation
+### Instalação
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Siga os passos abaixo para instalar e configurar sua aplicação:_
 
-1. Create you account at [bacula.org](https://www.bacula.org/bacula-binary-package-download/) and [bacularis.app](https://users.bacularis.com/user/login/)
-2. Download the configuration file
+1. Crie sua conta em [bacula.org](https://www.bacula.org/bacula-binary-package-download/) e [bacularis.app](https://users.bacularis.com/user/login/).
+
+2. Baixe o arquivo de configuração:
 
 ```sh
 wget https://abre.ai/bacula-molinux-install-conf
 ```
 
-3. Download the installation file
+3. Baixe o arquivo de instalação:
 
 ```sh
 wget https://abre.ai/bacula-molinux-install-app
 ```
 
-4. Enter your credentials in `bacula_molinux_install.conf` file:
+4. Insira suas credenciais no `arquivo bacula_molinux_install.conf`:
 
 ```bash
 bacula_key="69549348539sdvsd2623"
@@ -151,34 +151,34 @@ bacularis_user="sdfgh98ysdfgsdfg"
 bacularis_pass="sdlfgsdfg-WEWERTBsdfsdfg"
 ```
 
-Or you can specify during the installation
+Ou você pode especificar isso durante a instalação:
 
 ```bash
 --------------------------------------------------
- Inform your Bacula Key
- This key is obtained with a registration in Bacula.org.
+ Informe sua chave do Bacula
+ Esta chave é obtida com o registro no site Bacula.org.
  https://www.bacula.org/bacula-binary-package-download/
- Please, fill with your Bacula Key: 
+ Por favor, insira sua chave do Bacula:
 ```
 
-5. Make the `bacula_molinux_install-app` executable
+5. Torne o arquivo `bacula_molinux_install-app` executável:
 
 ```bash
 chmod +x bacula_molinux_install-app
 ```
 
-6. And here we go !
+6. Execute o instalador:
 
 ```bash
 ./bacula_molinux_install-app
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Uso
 
-After install you can use bconsole to connect to Bacula Director (server)
+Após a instalação, você pode utilizar o `bconsole` para se conectar ao Bacula Director (server)
 
 ```bash
 bconsole
@@ -189,11 +189,11 @@ Enter a period to cancel a command.
 *
 ```
 
-And/or configure Bacularis from your browser
+E/ou configurar o Bacularis a partir do seu navegador
 
 [![Bacularis API Screen Shot][bacularis-api-screenshot]](https://example.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -207,9 +207,9 @@ And/or configure Bacularis from your browser
   * [ ] Brazilian Portuguese
   * [ ] Spanish
 
-See the [open issues](https://github.com/molinux/bacula_molinux_install/issues) for a full list of proposed features (and known issues).
+Veja as [requisições abertas](https://github.com/molinux/bacula_molinux_install/issues) para uma lista completa de recursos propostos (e problemas conhecidos).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
@@ -225,23 +225,35 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p> -->
 
-LICENSE
+<!-- LICENSE
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p> -->
 
 <!-- CONTACT -->
-## Contact
+## Contato
 
 Marcus Molinero - [linkedin](https://linkedin.com/in/marcus-molinero) - <marcus.molinero@bacula.com.br>
 
 Project Link: [Bacula Community Molinux Install](https://github.com/molinux/bacula_molinux_install)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+
+## Parcerias
+<!-- <center> -->
+<table>
+ <tr>
+        <td><a href="https://www.bacula.lat"><img src="./assets/Logo-Bacula-Brasil.jpg"></a></td>
+        <td><a href="https://www.nomaland.com.br"><img src="./assets/Logo-Nomaland-2.png"></a></td>
+ <tr>
+</table>
+ <!-- </center> -->
+
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 <!-- ## Acknowledgments
@@ -257,7 +269,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p> -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

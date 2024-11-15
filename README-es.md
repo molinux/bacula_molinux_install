@@ -7,7 +7,7 @@
 | Ubuntu       | 22.04.4 LTS (Jammy Jellyfish) | 
 | Rocky        | Rocky Linux 9.3 (Blue Onyx)   |
 
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<!-- Improved compatibility of volver al inicio link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -84,31 +84,31 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Acerca del Proyecto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![BCMI Screen Shot][product-screenshot]](https://example.com)
 
-> Bacula Community Molinux Install (BCMI) is the ultimate tool that you need to install your Bacula Community server (and environment)
+> Bacula Community Molinux Install (BCMI) es la herramienta definitiva que necesitas para instalar tu servidor Bacula Community (y entorno).
 
 ---
 
-Here's why:
+¿Por qué usarlo?
 
-* Automatic installation with just a few steps
-* Possibility of installing isolated components (storage and/or client)
-* Bacula and Bacularis installation in the same place
-* Documentation in Portuguese, English and Spanish
+* Instalación automática con solo unos pocos pasos.
+* Posibilidad de instalar componentes aislados (almacenamiento y/o cliente).
+* Instalación de Bacula y Bacularis en el mismo lugar.
+* Documentación disponible en Portugués, Inglés y Español.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Introducción
 
-### Prerequisites
+### Requisitos previos
 
-To install Bacula Community and/or Bacularis through BCMI, you need to create your account at [bacula.org](https://www.bacula.org/bacula-binary-package-download/) and [bacularis.app](https://users.bacularis.com/user/login/) previously and get you key/account/password
+Para instalar Bacula Community y/o Bacularis usando BCMI, debes crear una cuenta en [bacula.org](https://www.bacula.org/bacula-binary-package-download/) y [bacularis.app](https://users.bacularis.com/user/login/) previamente y obtener tu clave/usuario/contraseña.
 
-After then, you put it on `bacula_molinux_install.conf` file as the example below
+Después de esto, introduce esta información en el archivo bacula_molinux_install.conf como en el ejemplo a continuación:
 
 ```bash
 bacula_key="69549348539sdvsd2623"
@@ -116,34 +116,35 @@ bacularis_user="sdfgh98ysdfgsdfg"
 bacularis_pass="sdlfgsdfg-WEWERTBsdfsdfg"
 ```
 
-Or you can specify during the installation
+O puedes especificarlo durante la instalación:
 
 ```bash
 --------------------------------------------------
- Inform your Bacula Key
- This key is obtained with a registration in Bacula.org.
+ Informe su clave de Bacula
+ Esta clave se obtiene con el registro en Bacula.org.
  https://www.bacula.org/bacula-binary-package-download/
- Please, fill with your Bacula Key: 
+ Por favor, introduzca su clave de Bacula:
 ```
 
-### Installation
+### Instalación
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Sigue los pasos a continuación para instalar y configurar tu aplicación:_
 
-1. Create you account at [bacula.org](https://www.bacula.org/bacula-binary-package-download/) and [bacularis.app](https://users.bacularis.com/user/login/)
-2. Download the configuration file
+1. Crea tu cuenta en [bacula.org](https://www.bacula.org/bacula-binary-package-download/) y [bacularis.app](https://users.bacularis.com/user/login/)
+
+2. Descarga el archivo de configuración:
 
 ```sh
 wget https://abre.ai/bacula-molinux-install-conf
 ```
 
-3. Download the installation file
+3. Descarga el archivo de instalación:
 
 ```sh
 wget https://abre.ai/bacula-molinux-install-app
 ```
 
-4. Enter your credentials in `bacula_molinux_install.conf` file:
+4. Introduce tus credenciales en el archivo `bacula_molinux_install.conf`:
 
 ```bash
 bacula_key="69549348539sdvsd2623"
@@ -151,34 +152,34 @@ bacularis_user="sdfgh98ysdfgsdfg"
 bacularis_pass="sdlfgsdfg-WEWERTBsdfsdfg"
 ```
 
-Or you can specify during the installation
+O puedes especificarlo durante la instalación:
 
 ```bash
 --------------------------------------------------
- Inform your Bacula Key
- This key is obtained with a registration in Bacula.org.
+ Informe su clave de Bacula
+ Esta clave se obtiene con el registro en Bacula.org.
  https://www.bacula.org/bacula-binary-package-download/
- Please, fill with your Bacula Key: 
+ Por favor, introduzca su clave de Bacula:
 ```
 
-5. Make the `bacula_molinux_install-app` executable
+5. Haz que el archivo `bacula_molinux_install-app` sea ejecutable:
 
 ```bash
 chmod +x bacula_molinux_install-app
 ```
 
-6. And here we go !
+6. Ejecuta el instalador:
 
 ```bash
 ./bacula_molinux_install-app
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Uso
 
-After install you can use bconsole to connect to Bacula Director (server)
+Después de instalar la aplicación, puedes usar bconsole para conectarse a Bacula Director (servidor)
 
 ```bash
 bconsole
@@ -189,27 +190,24 @@ Enter a period to cancel a command.
 *
 ```
 
-And/or configure Bacularis from your browser
+Y/o configurar Bacularis desde su navegador
 
 [![Bacularis API Screen Shot][bacularis-api-screenshot]](https://example.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-* [x] README in English
-* [ ] README in Brazilian Portuguese
-* [ ] README in Spanish
 * [ ] Bacula container version
 * [ ] Bacularis container version
 * [ ] Multi-language Support
   * [ ] Brazilian Portuguese
   * [ ] Spanish
 
-See the [open issues](https://github.com/molinux/bacula_molinux_install/issues) for a full list of proposed features (and known issues).
+Consulte los [problemas abiertos](https://github.com/molinux/bacula_molinux_install/issues) para obtener una lista completa de las características propuestas (y los problemas conocidos)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
@@ -225,23 +223,35 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p> -->
 
-LICENSE
+<!-- LICENSE
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p> -->
 
 <!-- CONTACT -->
-## Contact
+## Contacto
 
 Marcus Molinero - [linkedin](https://linkedin.com/in/marcus-molinero) - <marcus.molinero@bacula.com.br>
 
 Project Link: [Bacula Community Molinux Install](https://github.com/molinux/bacula_molinux_install)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
+
+## Asociaciones
+<!-- <center> -->
+<table>
+ <tr>
+        <td><a href="https://www.bacula.lat"><img src="./assets/Logo-Bacula-Brasil.jpg"></a></td>
+        <td><a href="https://www.nomaland.com.br"><img src="./assets/Logo-Nomaland-2.png"></a></td>
+ <tr>
+</table>
+ <!-- </center> -->
+
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 <!-- ## Acknowledgments
@@ -257,7 +267,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p> -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
