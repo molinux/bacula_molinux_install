@@ -86,7 +86,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![BCMI Screen Shot][product-screenshot]](https://example.com)
 
 > Bacula Community Molinux Install (BCMI) is the ultimate tool that you need to install your Bacula Community server (and environment)
 
@@ -227,12 +227,12 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-LICENSE
+<!-- LICENSE
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- CONTACT -->
 ## Contact
@@ -240,6 +240,18 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Marcus Molinero - [linkedin](https://linkedin.com/in/marcus-molinero) - <marcus.molinero@bacula.com.br>
 
 Project Link: [Bacula Community Molinux Install](https://github.com/molinux/bacula_molinux_install)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Partnerships
+<!-- <center> -->
+<table>
+ <tr>
+        <td><a href="https://www.bacula.lat"><img src="./assets/Logo-Bacula-Brasil.jpg"></a></td>
+        <td><a href="https://www.nomaland.com.br"><img src="./assets/Logo-Nomaland-2.png"></a></td>
+ <tr>
+</table>
+ <!-- </center> -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
