@@ -483,7 +483,7 @@ function menu()
         echo "   5) Install Bacularis (Web Interface)"
         echo "   6) Database credentials (for Bacularis API)"
         echo "   7) Exit"
-        read -p " Select an option [1-6]: " option
+        read -p " Select an option [1-7]: " option
         echo
         case $option in
             1) # Install Bacula with PostgreSQL
