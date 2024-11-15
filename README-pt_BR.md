@@ -1,12 +1,11 @@
-Bacula Community Molinux Install is approved in the following distributions and versions:
+**Bacula Community Molinux Install** is approved in the following distributions and versions:
 
-| Distro       | Version                          |
-|:-------------|:---------------------------------|
-| Debian       | 11 (bullseye)                    |
-| Oracle Linux | 9.3                              |
-| Ubuntu       | 22.04.4 LTS (Jammy Jellyfish)    |
-| Alma Linux   | Rocky Linux 9.4 (Seafoam Ocelot) |
-| Rocky        | Rocky Linux 9.3 (Blue Onyx)      |
+| Distro       | Version                       |
+| :---         | :---                          |
+| Debian       | 11 (bullseye)                 | 
+| Oracle Linux | 9.3                           |
+| Ubuntu       | 22.04.4 LTS (Jammy Jellyfish) | 
+| Rocky        | Rocky Linux 9.3 (Blue Onyx)   |
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
@@ -45,16 +44,16 @@ Bacula Community Molinux Install is approved in the following distributions and 
   <p align="center">
     Bacula Community Molinux Install
     <br />
-    <a href="https://github.com/molinux/bacula_molinux_install/blob/dev/README-es.md"><strong>Español »</strong></a>
-    <a href="https://github.com/molinux/bacula_molinux_install/blob/dev/README-pt_BR.md"><strong>Português »</strong></a>
-    <a href="https://github.com/molinux/bacula_molinux_install/blob/dev/README-en.md"><strong>English</strong></a>
+    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-pt_BR.md"><strong>Portugês »</strong></a>
+    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-es.md"><strong>Español »</strong></a>
+    <a href="https://github.com/molinux/bacula-tools/blob/master/bacula-install/README-en.md"><strong>English</strong></a>
     <br />
     <br />
-    <!-- <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a> -->
-    <!-- · -->
-    <a href="https://github.com/molinux/bacula_molinux_install/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
     ·
-    <a href="https://github.com/molinux/bacula_molinux_install/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -89,93 +88,131 @@ Bacula Community Molinux Install is approved in the following distributions and 
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+> Bacula Community Molinux Install (BCMI) is the ultimate tool that you need to install your Bacula Community server (and environment)
+
+---
 
 Here's why:
 
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+* Automatic installation with just a few steps
+* Possibility of installing isolated components (storage and/or client)
+* Bacula and Bacularis installation in the same place
+* Documentation in Portuguese, English and Spanish
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+To install Bacula Community and/or Bacularis through BCMI, you need to create your account at [bacula.org](https://www.bacula.org/bacula-binary-package-download/) and [bacularis.app](https://users.bacularis.com/user/login/) previously and get you key/account/password
 
-* npm
+After then, you put it on `bacula_molinux_install.conf` file as the example below
 
-  ```sh
-  npm install npm@latest -g
-  ```
+```bash
+bacula_key="69549348539sdvsd2623"
+bacularis_user="sdfgh98ysdfgsdfg"
+bacularis_pass="sdlfgsdfg-WEWERTBsdfsdfg"
+```
+
+Or you can specify during the installation
+
+```bash
+--------------------------------------------------
+ Inform your Bacula Key
+ This key is obtained with a registration in Bacula.org.
+ https://www.bacula.org/bacula-binary-package-download/
+ Please, fill with your Bacula Key: 
+```
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Create you account at [bacula.org](https://www.bacula.org/bacula-binary-package-download/) and [bacularis.app](https://users.bacularis.com/user/login/)
+2. Download the configuration file
 
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
+```sh
+wget https://abre.ai/bacula-molinux-install-conf
+```
 
-3. Install NPM packages
+3. Download the installation file
 
-   ```sh
-   npm install
-   ```
+```sh
+wget https://abre.ai/bacula-molinux-install-app
+```
 
-4. Enter your API in `config.js`
+4. Enter your credentials in `bacula_molinux_install.conf` file:
 
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+```bash
+bacula_key="69549348539sdvsd2623"
+bacularis_user="sdfgh98ysdfgsdfg"
+bacularis_pass="sdlfgsdfg-WEWERTBsdfsdfg"
+```
+
+Or you can specify during the installation
+
+```bash
+--------------------------------------------------
+ Inform your Bacula Key
+ This key is obtained with a registration in Bacula.org.
+ https://www.bacula.org/bacula-binary-package-download/
+ Please, fill with your Bacula Key: 
+```
+
+5. Make the `bacula_molinux_install-app` executable
+
+```bash
+chmod +x bacula_molinux_install-app
+```
+
+6. And here we go !
+
+```bash
+./bacula_molinux_install-app
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+After install you can use bconsole to connect to Bacula Director (server)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```bash
+bconsole
+
+Connecting to Director localhost:9101
+1000 OK: 10002 bacula-dir Version: 15.0.2 (21 March 2024)
+Enter a period to cancel a command.
+*
+```
+
+And/or configure Bacularis from your browser
+
+[![Bacularis API Screen Shot][bacularis-api-screenshot]](https://example.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-* [x] Add Changelog
-* [x] Add back to top links
-* [ ] Add Additional Templates w/ Examples
-* [ ] Add "components" document to easily copy & paste sections of the readme
+* [x] README in English
+* [ ] README in Brazilian Portuguese
+* [ ] README in Spanish
+* [ ] Bacula container version
+* [ ] Bacularis container version
 * [ ] Multi-language Support
-  * [ ] Chinese
+  * [ ] Brazilian Portuguese
   * [ ] Spanish
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/molinux/bacula_molinux_install/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
-## Contributing
+<!-- ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -188,9 +225,9 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-<!-- LICENSE -->
+LICENSE
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -200,14 +237,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - <email@example.com>
+Marcus Molinero - [linkedin](https://linkedin.com/in/marcus-molinero) - <marcus.molinero@bacula.com.br>
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [Bacula Community Molinux Install](https://github.com/molinux/bacula_molinux_install)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- ## Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
@@ -220,10 +257,10 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
-https://www.markdownguide.org/basic-syntax/#reference-style-links
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -236,7 +273,8 @@ https://www.markdownguide.org/basic-syntax/#reference-style-links
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: assets/bcmi-001.png
+[bacularis-api-screenshot]: assets/bcmi-002.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
