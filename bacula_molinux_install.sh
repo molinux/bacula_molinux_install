@@ -76,7 +76,7 @@ EC="\e[0m"
 
 DIRCONF=/opt/bacula/etc/bacula-dir.conf
 # shellcheck source=bacula_molinux_install.conf
-source $PWD/bacula_molinux_install-conf
+source $PWD/bacula-molinux-install-conf
 export OS=$(grep -E "^ID=" < /etc/os-release | sed 's/.*=//g' | tr -d \")
 }
 
