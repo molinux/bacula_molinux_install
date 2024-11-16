@@ -198,7 +198,7 @@ function create_bacula_repository()
 
     if [ "$OS" == "debian" ] || [ "$OS" == "ubuntu" ]; then
         if [[ "$bacula_version" > "13.0.0" ]]; then
-            url="http://www.bacula.org/packages/${bacula_key}/debs/${bacula_version}/"
+            url="http://www.bacula.org/packages/${bacula_key}/debs/${bacula_version}"
         else
             url="http://www.bacula.org/packages/${bacula_key}/debs/${bacula_version}/${codename}/amd64"
         fi
@@ -489,6 +489,7 @@ function menu()
             1) # Install Bacula with PostgreSQL
                 download_bacula_key
                 read_bacula_key
+                create_bacula_repository
                 install_with_postgresql
                 read -p "Press [enter] key to continue..." readenterkey
                 ;;
