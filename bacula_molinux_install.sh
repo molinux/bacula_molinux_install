@@ -119,7 +119,7 @@ function download_bacula_key()
     wget -c https://www.bacula.org/downloads/Bacula-4096-Distribution-Verification-key.asc -O /tmp/Bacula-4096-Distribution-Verification-key.asc
     if [ "$OS" == "debian" ] || [ "$OS" == "ubuntu" ]; then
          wget -qO- https://www.bacula.org/downloads/Bacula-4096-Distribution-Verification-key.asc > /etc/apt/trusted.gpg.d/Bacula-4096-Distribution-Verification-key.asc
-    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         rpm --import /tmp/Bacula-4096-Distribution-Verification-key.asc
     else
         echo "Is not possible to install the Bacula Key"
@@ -169,7 +169,7 @@ function download_bacularis_key()
     if [ "$OS" == "debian" ] || [ "$OS" == "ubuntu" ]; then
         wget -qO- https://packages.bacularis.app/bacularis.pub | gpg --dearmor > /usr/share/keyrings/bacularis-archive-keyring.gpg
         echo "machine https://packages.bacularis.app login $bacularis_user password $bacularis_pass" > /etc/apt/auth.conf.d/bacularis.conf
-    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         rpm --import /tmp/Bacula-4096-Distribution-Verification-key.asc
     else
         echo "Is not possible to install the Bacula Key"
@@ -205,7 +205,7 @@ function create_bacula_repository()
         echo "# Bacula Community
         deb ${url} ${codename} main" > /etc/apt/sources.list.d/bacula-community.list
 
-    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         if [ "$bacula_version" == "11.0.6" ]; then
           url="https://www.bacula.org/packages/${bacula_key}/rpms/${bacula_version}/rhel${codename}-64/"
         else
@@ -253,7 +253,7 @@ deb-src http://repo.mysql.com/apt/debian/ ${codename} mysql-5.7" > /etc/apt/sour
         systemctl enable mysql
         systemctl start mysql
 
-    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         rpm --import /tmp/RPM-GPG-KEY-mysql
         wget -c http://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm -O /tmp/mysql57-community-release-el7-9.noarch.rpm
         rpm -ivh /tmp/mysql57-community-release-el7-9.noarch.rpm
@@ -294,7 +294,7 @@ function install_with_postgresql()
         apt-get install -y postgresql postgresql-client
         apt-get install -y bacula-postgresql
 
-    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         yum install -y postgresql-server
         yum install -y bacula-postgresql --exclude=bacula-mysql
         postgresql-setup initdb
@@ -334,7 +334,7 @@ function install_only_storage()
         apt-get install -y postgresql #postgresql-client
         apt-get install -y bacula-postgresql
 
-    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         yum install -y postgresql-server
         yum install -y bacula-postgresql --exclude=bacula-mysql
         postgresql-setup initdb
@@ -376,7 +376,7 @@ function install_only_client()
         apt-get update
         apt-get install -y bacula-client
 
-    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         yum install -y bacula-client
     fi
 
@@ -411,7 +411,7 @@ function install_bacularis()
         systemctl restart apache2
 
 # TODO: Testes no Rocky Linux
-    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         {
         echo "# Bacularis - $OS $codename package repository" 
         echo '[bacularis-app]'
@@ -554,7 +554,7 @@ if [[ -e /etc/debian_version ]]; then
 # if [[ -e /etc/os-release ]]; then
     OS=$(grep -E "^ID=" < /etc/os-release | sed 's/.*=//g' | tr -d \")
     codename=$(grep "VERSION_CODENAME" < /etc/os-release | sed 's/.*=//g')
-elif [[ -e /etc/centos-release || -e /etc/redhat-release || -e /etc/oracle-release || -e /etc/almalinux-release ]]; then
+elif [[ -e /etc/centos-release || -e /etc/redhat-release || -e /etc/oracle-release || -e /etc/almalinux-release  || -e /etc/rocky-release ]]; then
     setenforce 0
     sudo sed -i "s/enforcing/disabled/g" /etc/selinux/config
     sudo sed -i "s/enforcing/disabled/g" /etc/sysconfig/selinux
@@ -570,7 +570,7 @@ fi
 
 if [ "$OS" == "debian" ] || [ "$OS" == "ubuntu" ]; then
     apt-get install -y zip wget apt-transport-https bzip2 curl figlet gpg
-elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ]; then
+elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
     if [ "$codename" -ge 8 ]; then
         dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-$codename.noarch.rpm
         dnf install -y zip wget apt-transport-https bzip2 curl figlet
