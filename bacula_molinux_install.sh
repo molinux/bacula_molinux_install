@@ -305,11 +305,8 @@ function install_with_postgresql()
     su - postgres -c "/opt/bacula/scripts/create_postgresql_database"
     su - postgres -c "/opt/bacula/scripts/make_postgresql_tables"
     su - postgres -c "/opt/bacula/scripts/grant_postgresql_privileges"
-    su - postgres
-    psql -c "alter user bacula with password 'bacula';"
-    exit
-
-
+    su - postgres -c "psql -c \"alter user bacula with password 'bacula';\""
+    
     systemctl enable bacula-fd.service
     systemctl enable bacula-sd.service
     systemctl enable bacula-dir.service
