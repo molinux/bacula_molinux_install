@@ -356,7 +356,7 @@ function install_only_storage()
     systemctl stop bacula-dir.service
 
     #for i in $(ls /opt/bacula/bin); do
-    ln -s /opt/bacula/bin/bacula-sd /usr/sbin/bacula-sd;
+    ln -s /opt/bacula/bin/bacula-sd /usr/sbin/bacula-sd
     # Clean the house !
     CONFDIR=/opt/bacula/etc
     rm $CONFDIR/bacula-{dir,fd}.conf
