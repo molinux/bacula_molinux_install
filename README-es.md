@@ -196,6 +196,28 @@ Y/o configurar Bacularis desde su navegador
 
 <p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
+# Bacularis Configuration
+
+![](assets/bcmi-003.png)
+
+![](assets/bcmi-004.png)
+
+![](assets/bcmi-005.png)
+
+![](assets/bcmi-006.png)
+
+![](assets/bcmi-007.png)
+
+![](assets/bcmi-008.png)
+
+![](assets/bcmi-009.png)
+
+![](assets/bcmi-010.png)
+
+![](assets/bcmi-011.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- ROADMAP -->
 ## Roadmap
 
