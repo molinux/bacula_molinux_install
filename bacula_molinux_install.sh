@@ -305,6 +305,10 @@ function install_with_postgresql()
     su - postgres -c "/opt/bacula/scripts/create_postgresql_database"
     su - postgres -c "/opt/bacula/scripts/make_postgresql_tables"
     su - postgres -c "/opt/bacula/scripts/grant_postgresql_privileges"
+    su - postgres
+    psql -c "alter user bacula with password 'bacula';"
+    exit
+
 
     systemctl enable bacula-fd.service
     systemctl enable bacula-sd.service
@@ -410,6 +414,32 @@ function install_bacularis()
         a2ensite bacularis
         systemctl restart apache2
 
+        echo "Defaults:apache "'!'"requiretty
+        www-data ALL=NOPASSWD: /opt/bacula/bin/bconsole
+        www-data ALL=NOPASSWD: /opt/bacula/bin/bdirjson
+        www-data ALL=NOPASSWD: /opt/bacula/bin/bsdjson
+        www-data ALL=NOPASSWD: /opt/bacula/bin/bfdjson
+        www-data ALL=NOPASSWD: /opt/bacula/bin/bbconsjson
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-dir
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-dir
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-dir
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-sd
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-sd
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-sd
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-fd
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-fd
+        www-data ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-fd
+        www-data ALL=(root) NOPASSWD: /opt/bacula/bin/mtx-changer
+        " > /etc/sudoers.d/bacularis
+
+        usermod -aG bacula www-data
+        chown -R bacula: /opt/bacula/etc/
+        chown -R www-data:bacula /opt/bacula/working /opt/bacula/etc
+        chmod -R g+rwx /opt/bacula/working /opt/bacula/etc
+
+        sed -i 's/ident/trust/g; s/peer/trust/g; s/md5/trust/g' /var/lib/pgsql/data/pg_hba.conf
+        systemctl reload postgresql
+
 # TODO: Testes no Rocky Linux
     elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
         {
@@ -425,6 +455,33 @@ function install_bacularis()
         } > /etc/yum.repos.d/bacularis.repo
         dnf install bacularis bacularis-httpd bacularis-selinux
         systemctl restart httpd
+
+        echo "Defaults:apache "'!'"requiretty
+        apache ALL=NOPASSWD: /opt/bacula/bin/bconsole
+        apache ALL=NOPASSWD: /opt/bacula/bin/bdirjson
+        apache ALL=NOPASSWD: /opt/bacula/bin/bsdjson
+        apache ALL=NOPASSWD: /opt/bacula/bin/bfdjson
+        apache ALL=NOPASSWD: /opt/bacula/bin/bbconsjson
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-dir
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-dir
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-dir
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-sd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-sd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-sd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-fd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-fd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-fd
+        apache ALL=(root) NOPASSWD: /opt/bacula/bin/mtx-changer
+        " > /etc/sudoers.d/bacularis
+
+        usermod -aG bacula apache
+        chown -R bacula: /opt/bacula/etc/
+        chown -R apache:bacula /opt/bacula/working /opt/bacula/etc
+        chmod -R g+rwx /opt/bacula/working /opt/bacula/etc
+
+        sed -i 's/ident/trust/g; s/peer/trust/g; s/md5/trust/g' /var/lib/pgsql/data/pg_hba.conf
+        systemctl reload postgresql
+
 
     fi
     clear
