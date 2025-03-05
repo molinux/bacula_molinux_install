@@ -478,6 +478,8 @@ function install_bacularis()
 
         sed -i 's/ident/trust/g; s/peer/trust/g; s/md5/trust/g' /var/lib/pgsql/data/pg_hba.conf
         systemctl reload postgresql
+        firewall-cmd --permanent --zone=public --add-port=9097/tcp
+        systemctl restart firewalld
 
 
     fi
