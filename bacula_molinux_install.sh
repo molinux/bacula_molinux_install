@@ -362,7 +362,12 @@ function install_only_storage()
     CONFDIR=/opt/bacula/etc
     rm $CONFDIR/bacula-{dir,fd}.conf
     rm $CONFDIR/bconsole.conf
-    apt-get remove postgresql
+    if [ "$OS" == "debian" ] || [ "$OS" == "ubuntu" ]; then
+      apt-get remove postgresql
+    elif [ "$OS" == "centos" ] || [ "$OS" == "oracle" ] || [ "$OS" == "almalinux" ] || [ "$OS" == "rocky" ]; then
+      yum remove postgresql
+    fi
+
     #done
     # sed '/[Aa]ddress/s/=\s.*/= localhost/g' -i  /opt/bacula/etc/bconsole.conf
     echo
