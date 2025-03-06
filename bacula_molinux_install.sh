@@ -315,7 +315,7 @@ function install_with_postgresql()
     systemctl start bacula-sd.service
     systemctl start bacula-dir.service
 
-    for i in $(/opt/bacula/bin/); do
+    for i in $(ls /opt/bacula/bin/); do
         ln -s /opt/bacula/bin/"$i" /usr/sbin/"$i";
     done
     sed '/[Aa]ddress/s/=\s.*/= localhost/g' -i  /opt/bacula/etc/bconsole.conf
