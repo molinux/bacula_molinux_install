@@ -488,6 +488,50 @@ function install_bacularis()
         systemctl reload postgresql
         firewall-cmd --permanent --zone=public --add-port=9097/tcp
         systemctl restart firewalld
+    
+    # //TODO: Acertar depois o do Oracle Linux. Esta somente para o 9
+    elif [ "$OS" == "oracle" ] || [ "$OS" == "ol" ]; then
+        {
+        echo "# Bacularis - $OS $codename package repository" 
+        echo '[bacularis-app]'
+        echo "name=$OS $codename package repository"
+        echo "baseurl=https://packages.bacularis.app/stable/oraclelinux9"
+        echo "gpgcheck=1"
+        echo "gpgkey=https://packages.bacularis.app/bacularis.pub"
+        echo "username=$bacularis_user"
+        echo "password=$bacularis_pass"
+        echo "enabled=1"
+        } > /etc/yum.repos.d/bacularis.repo
+        dnf install bacularis bacularis-httpd bacularis-selinux
+        systemctl restart httpd
+
+        echo "Defaults:apache "'!'"requiretty
+        apache ALL=NOPASSWD: /opt/bacula/bin/bconsole
+        apache ALL=NOPASSWD: /opt/bacula/bin/bdirjson
+        apache ALL=NOPASSWD: /opt/bacula/bin/bsdjson
+        apache ALL=NOPASSWD: /opt/bacula/bin/bfdjson
+        apache ALL=NOPASSWD: /opt/bacula/bin/bbconsjson
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-dir
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-dir
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-dir
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-sd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-sd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-sd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl start bacula-fd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl stop bacula-fd
+        apache ALL=(root) NOPASSWD: /usr/bin/systemctl restart bacula-fd
+        apache ALL=(root) NOPASSWD: /opt/bacula/bin/mtx-changer
+        " > /etc/sudoers.d/bacularis
+
+        usermod -aG bacula apache
+        chown -R bacula: /opt/bacula/etc/
+        chown -R apache:bacula /opt/bacula/working /opt/bacula/etc
+        chmod -R g+rwx /opt/bacula/working /opt/bacula/etc
+
+        sed -i 's/ident/trust/g; s/peer/trust/g; s/md5/trust/g' /var/lib/pgsql/data/pg_hba.conf
+        systemctl reload postgresql
+        firewall-cmd --permanent --zone=public --add-port=9097/tcp
+        systemctl restart firewalld
 
 
     fi
