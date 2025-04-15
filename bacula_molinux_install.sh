@@ -305,7 +305,7 @@ function install_with_postgresql()
     su - postgres -c "/opt/bacula/scripts/create_postgresql_database"
     su - postgres -c "/opt/bacula/scripts/make_postgresql_tables"
     su - postgres -c "/opt/bacula/scripts/grant_postgresql_privileges"
-    su - postgres -c "psql -c \"alter user bacula with password 'bacula';\""
+    #su - postgres -c "psql -c \"alter user bacula with password 'bacula';\""
     
     systemctl enable bacula-fd.service
     systemctl enable bacula-sd.service
@@ -441,6 +441,8 @@ function install_bacularis()
         chmod -R g+rwx /opt/bacula/working /opt/bacula/etc
 
         sed -i 's/ident/trust/g; s/peer/trust/g; s/md5/trust/g' /var/lib/pgsql/data/pg_hba.conf
+        sed -i 's/ident/trust/g; s/peer/trust/g; s/md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
+        sed '/\#\ TYPE/a\local   bacula          bacula                                  md5' /etc/postgresql/*/main/pg_hba.conf
         systemctl reload postgresql
 
 # TODO: Testes no Rocky Linux
