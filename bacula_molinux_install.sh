@@ -94,7 +94,7 @@ function python_deps()
 # Database credentials for Baculais API
 database_credentials()
 {
-    grep db $DIRCONF | tr ';' '\n'
+    grep dbpassword $DIRCONF | tr ';' '\n'
 }
 
 #===============================================================================
